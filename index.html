@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" >
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<h1 style="margin-left: 100px;margin-top:30px; ">Calculator</h1>
+	<div class="calc">
+	
+<br>
+	<table border="2">
+		<tr>
+		<td colspan="5">	
+		<input type="text"  id="num" onfocus="myFunction(this);">
+		</td>
+		
+			
+		</tr>
+		<tr>
+		<td><button type="button"  onclick="c('c');" id="ac">Ac</button></td>	
+		<td><button type="button"  onclick="back();"id="ac"><i class="fa fa-arrow-left"></i></button ></td>	
+		<td><button type="button"  onclick="square();" id="green"><i class="fa fa-superscript"></i></button></td>	
+		<td><button type="button"  onclick="root();" id="green">&#8730;</button></td>
+		<td><button type="button"  onclick="sin();" id="trig">sin&theta;</button></td>
+
+		
+		
+		</tr>
+		<tr>
+			
+			<td><button type="button"  onclick="display('1');">1</button></td>
+			<td><button type="button"  onclick="display('2');">2</button></td>
+			<td><button type="button"  onclick="display('3');">3</button> </td>
+			<td><button type="button"  onclick="display('+');" id="op">+</button> </td>
+			<td><button type="button"  onclick="cos();" id="trig">cos&theta;</button></td>
+		</tr>
+		<tr>
+			
+			<td><button type="button"  onclick="display('4');">4</button> </td>
+			<td><button type="button"  onclick="display('5');">5</button> </td>
+			<td><button type="button"  onclick="display('6');">6</button> </td>
+			<td><button type="button"  onclick="display('*');" id="op">*</button></td>
+			<td><button type="button"  onclick="tan();" id="trig">tan&theta;</button></td>
+		</tr>
+		<tr>
+			<td><button type="button"  onclick="display('7');">7</button></td>
+			<td><button type="button"  onclick="display('8');">8</button></td>
+			<td><button type="button"  onclick="display('9');">9</button></td>
+			<td><button type="button"  onclick="display('/');" id="op">/</button></td>
+			<td><button type="button"  onclick="log2();" id="log">log<sub>2</sub></button></td>
+		</tr>
+		<tr>
+			<td><button type="button"  onclick="display('0');" id="dot">0</button> </td>
+			<td><button type="button"  onclick="display('.');"id="dot">.</button></td>
+			<td><button type="button"  onclick="calculation('=');" id="dot">=</button> </td>
+			<td><button type="button"  onclick="display('-');" id="op">-</button></td>
+			
+			
+			<td><button type="button"  onclick="log10();" id="log">log<sub>10</sub></button></td>
+		</tr>
+
+	</table>
+		
+	</form>
+	</div>
+	<script type="text/javascript">
+		function display(val){
+			  document.getElementById("num").value+=val;
+		}
+		function calculation()
+         {
+         	
+             let val = document.getElementById("num").value;
+             let calc = eval(val);
+             document.getElementById("num").value = calc;
+         }
+         function c(){
+         	document.getElementById("num").value="";
+         }
+		function back(){
+			var back=document.getElementById("num").value;
+
+			var space=back.substr(0,back.length-1);
+			document.getElementById("num").value=space;
+		}
+		function square(){
+			var x=document.getElementById('num').value;
+			var sq=eval(x*x); 
+			document.getElementById('num').value=sq;
+		}
+		function root(){
+			var y=document.getElementById('num').value;
+			document.getElementById('num').value=Math.sqrt(y);
+		}
+		function sin(){
+			var z=document.getElementById('num').value;
+			document.getElementById('num').value=Math.sin(z*Math.PI/180);
+		}
+		function cos(){
+			var a=document.getElementById('num').value;
+			document.getElementById('num').value=Math.cos(a*Math.PI/180);
+		}
+		function tan(){
+			var b=document.getElementById('num').value;
+			document.getElementById('num').value=Math.sin(b*Math.PI/180);
+		}
+		function log10(){
+			var c=document.getElementById('num').value;
+			document.getElementById('num').value=Math.log10(c);
+		}
+		function log2(){
+			var d=document.getElementById('num').value;
+			document.getElementById('num').value=Math.log2(d);
+		}
+			function myFunction(x) {
+ 		 x.style.background = "black";
+ 		 x.style.color = "white";
+}
+</script>
+		
+	</script>
+
+</body>
+</html>
